@@ -79,6 +79,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   faker
+  json
   pry
   puma
   rake

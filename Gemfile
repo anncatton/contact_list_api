@@ -12,6 +12,7 @@ gem 'puma'
 gem 'tux'
 
 gem 'faker'
+gem 'json'
 
 group :development, :test do
   gem 'pry'
