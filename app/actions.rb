@@ -1,4 +1,3 @@
-# Homepage (Root path)
 get '/' do
   erb :index
 end
@@ -8,19 +7,23 @@ get '/contacts' do
   @contacts = Contact.all.to_json
 end
 
-post '/contacts' do
-
-end
-
 get '/contacts/:id' do
   content_type :json
   @contact = Contact.find(params[:id]).to_json
 end
 
-# get 'contacts/new' do
+post '/contacts' do
+  @contact = Contact.create!(
+    name: params[:name],
+    email: params[:email],
+    city: params[:city]
+  )
+end
 
-# end
+delete '/contacts/:id' do
+  content_type :json
+  @contact = Contact.find(params[:id])
+  @contact.destroy
 
-# delete 'contact/:id' do
-
-# end
+  { success: true}.to_json
+end

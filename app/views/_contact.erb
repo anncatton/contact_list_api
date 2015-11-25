@@ -1,0 +1,13 @@
+<ul>
+  <% contacts.each do |contact| %>
+    <li><%= contact.name %></li>
+  <% end %>
+</ul>
+<div id="display-all">
+  <%= erb :_contact, :locals => {:contacts => @contacts} %>
+</div>
+
+
+var myTemplate = _.template( $('#my-template').html() );
+
+myTemplate({ context hash }) -> returns string with values passed in from context hash

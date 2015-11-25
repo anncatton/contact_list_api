@@ -6,9 +6,12 @@
 
 <div>
   <form id="add-contact">
-    <input type="text" name="name" placeholder="Full name" />
-    <input type="text" name="email" placeholder="Email" />
-    <input type="text" name="city" placeholder="City" />
+    <label for="contact-name"></label>
+    <input type="text" id="contact-name" name="name" placeholder="Full name" />
+    <label for="contact-email"></label>
+    <input type="text" id="contact-email" name="email" placeholder="Email" />
+    <label for="contact-city"></label>
+    <input type="text" id="contact-city" name="city" placeholder="City" />
     <input type="submit" value="Add" />
   </form>
 </div>
@@ -19,7 +22,22 @@
     <input type="submit" value="Search" />
   </form>
 </div>
+<div>
+  <form id="delete-contact">
+    <label for="delete-id"></label>
+    <input type="text" id="delete-id" placeholder="Contact ID" />
+    <input type="submit" value="Delete" />
+  </form>
+</div>
 
-<div id="search-result-name"></div>
+<div id="search-result">
+
+</div>
+<script type='text/template' id="contact-template">
+  <h3><%%= name %></h3>
+  <h4><%%= email %></h4>
+  <h4><%%= city %></h4>
+</script>
+<!-- <div id="search-result-name"></div>
 <div id="search-result-email"></div>
-<div id="search-result-city"></div>
+<div id="search-result-city"></div> -->
